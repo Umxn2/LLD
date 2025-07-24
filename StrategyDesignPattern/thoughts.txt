@@ -1,0 +1,9 @@
+You're building classes and you need methods to go along with it.
+
+Imagine you have a Vehicle class which has run method and display method and everything, and suppose you have 3 child classes expensive car, affordable car, 
+cheap car. Now run method of lets say all cars is same and display method is suppose same for 2 of these cars, that means 2 cars will have to write the 
+same display method and lets say we make Vehicle's run same as the run we wanted for all these 3 cars. So these cars can you extend Vehicle and get their run 
+method well but because we can't extend 2 classes we will have to write display code twice. Ideally if extending 2 classes were allowed it would look like 
+expensive car extends Vehicle, expensive display and normal car extends Vehicle, normal display. We can't inherit then the next best thing we can do is
+inject dependencies by composition and that's mostly how strategy pattern evolves, we inject a class which has this method implemented into our class, so now 
+we have this method and we don't have to write the same thing again. Strategy ~= a method. We inject this functionality giving class into our class as a strategyClass and use it's method in our display method. 
