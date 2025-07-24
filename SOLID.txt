@@ -7,16 +7,30 @@ Single Responsibility Principle -> Help in maintainable and extendable and clean
 
 Open/Closed Principle
   Problem -> My new feature broke the old code ;-; 
-  Why? When there's a new change building on single responsibility principle, you dont wanna change the same class and add feature to that class, that class should be closed to modification. You build features on top of the truth you have. So suppose theres a method which processes a payment and initially its parameter was cash and now you want add the feature of UPI in it, if you tried to change the method you would have to add okay if the object is instance of cash then do this else if it is a instance of upi then do this. Instead you can extend the payment processer class and override the payment processor method for only UPI, so cash functionality doesn't change and you can pass UPI input and it also just works.
+  Why? When there's a new change building on single responsibility principle, you dont wanna change the same class and add feature to that class, that
+  class should be closed to modification. You build features on top of the truth you have. So suppose theres a method which processes a payment and 
+  initially its parameter was cash and now you want add the feature of UPI in it, if you tried to change the method you would have to add okay if the 
+  object is instance of cash then do this else if it is a instance of upi then do this. Instead you can extend the payment processer class and override 
+  the payment processor method for only UPI, so cash functionality doesn't change and you can pass UPI input and it also just works.
 
 Interface Segregation Principle
 Problem -> Code being title coupled and things breaking 
-Why? Your class is implementing an interface which has methods that have nothing to do with it, come on a robot interface having a fly method, and then you have a walking robot, you'll have a method which give a null or an exception because you're making it do something that it wasn't meant to. Just like Single Responsibility Principle says class should do one thing, interface also follows do one thing or at least related thing else the implementing classes will implement a lot of things that they dont need to and it will cause problems later.
+Why? Your class is implementing an interface which has methods that have nothing to do with it, come on a robot interface having a fly method, and then 
+you have a walking robot, you'll have a method which give a null or an exception because you're making it do something that it wasn't meant to. Just 
+like Single Responsibility Principle says class should do one thing, interface also follows do one thing or at least related thing else the 
+implementing classes will implement a lot of things that they dont need to and it will cause problems later.
 
 Liskov Substitution Principle
 Problem -> Woah surprising things are happening, I didn't expect this 
-Why? You made your interface or abstract class have a lot of things and now because your concrete classes don't need that much functionality and aren't build for it, its breaking things. You want to have the least amount of surprises when building something, it just means if you substitute a parent class for some subclass or even sibling class, your code should not break or give a null pointer or some kind of exception, if it is then the class hierarchy you made has something wrong. Don't break core behaviour. Even if you have a parent child relation but the child acts nothing like the parent, the child should not extend this parent.  
+Why? You made your interface or abstract class have a lot of things and now because your concrete classes don't need that much functionality and aren't 
+build for it, its breaking things. You want to have the least amount of surprises when building something, it just means if you substitute a parent 
+class for some subclass or even sibling class, your code should not break or give a null pointer or some kind of exception, if it is then the class 
+hierarchy you made has something wrong. Don't break core behaviour. Even if you have a parent child relation but the child acts nothing like the 
+parent, the child should not extend this parent.  
 
 Dependancy Injection Principle
 Problem -> I'm changing some functionality and now I have to change the thing everywhere in my gazillion line codebase 
-Why? -> Self explanatory, you dont wanna change the same thing again and again in your codebase, How can you prevent it? Suppose youre using Hashmap in your code and everywhere in every method you're passing Hashmap and then if you wanna change Hashmap to TreeMap or something you'll have to change the code everywhere, instead you can use Map everywhere, it makes code less tightly coupled and you can do a lot more things without changing other things.  
+Why? -> Self explanatory, you dont wanna change the same thing again and again in your codebase, How can you prevent it? Suppose youre using Hashmap in 
+your code and everywhere in every method you're passing Hashmap and then if you wanna change Hashmap to TreeMap or something you'll have to change the 
+code everywhere, instead you can use Map everywhere, it makes code less tightly coupled and you can do a lot more things without changing other 
+things.  
