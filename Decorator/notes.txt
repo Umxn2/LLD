@@ -1,0 +1,5 @@
+The problem it's trying to solve?
+Trying to avoid class explosion. So suppose you want had incremtal features like
+maybe a macbook, so might have to make a class which is like what I've defined, a lot of if and switch cases which might not
+be ideal, and you might have to make a lot of classes being macbookWith16gb ram and macbookWith32gb and something like that.
+better is to do some decorato patter
